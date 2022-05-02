@@ -1,0 +1,29 @@
+{
+  "sources": [
+    {
+      "type": "kafka",
+      "config": {
+        "topic": "source-topic",
+        "properties": {
+          "kafka_bootstrap_servers": "http://localhost:9091/kafka?param=j%20j",
+          "auto_commit": true,
+          "auto_max": "PT10S",
+          "data_time": "2021-08-02 00:00:00",
+          "start_time": 1627862400000
+        }
+      }
+    }
+  ],
+  "sinks": [
+    {
+      "type": "nsq",
+      "config": {
+        "topic": "sink-topic",
+        "properties": {
+          "auto_commit": true,
+          "auto_max": 10
+        }
+      }
+    }
+  ]
+}
